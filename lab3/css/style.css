@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+.tableweather {
+    border: 1px #333 solid;
+    width: 50%;
+}
+
+.tableweather td {
+    border: 1px #333 solid;
+    text-align: center;
+    box-shadow: 0px 0px 7px #999;
+}
+
+.photos {
+    width: 48px;
+}
+
+#strongtext {
+font-weight: bold;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0; 
+    right: 0; 
+    height: 100%; 
+    width: 250px; 
+    background-color: #7197d0; 
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .sidebar ul {
+    list-style-type: none; 
+    padding: 0; 
+  }
+  
+  .sidebar li {
+    margin: 5px 0; 
+    border-bottom: 1px dotted;
+    border-top: 1px dotted;
+    padding: 10;
+    transition: all 0.13s ease;
+    background: rgba(0,0,0,0);
+  }
+
+  .sidebar li:hover{
+    padding-left: 20px;
+    background: rgba(0,0,0,0.1);
+  }
+
+  .sidebar a {
+    text-decoration: none; 
+    color: #222; 
+    display: block; 
+    padding: 5px; 
+  }
+  
+  
+  
+  
