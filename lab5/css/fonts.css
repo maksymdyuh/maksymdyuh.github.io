@@ -1,0 +1,46 @@
+@font-face {
+    font-family: "cat";
+  
+    src: url("../fonts/Comic_CAT.otf");
+  }
+
+@font-face {
+    font-family: "arina";
+  
+    src: url("../fonts/Arina.ttf");
+  }
+
+  @font-face {
+    font-family: "shadower";
+  
+    src: url("../fonts/Shadower.ttf");
+  }
+
+  h1 {
+    font-family: "cat";
+    font-size: 70px;
+  }
+
+  h2 {
+    font-family: "arina";
+    font-size: 70px;
+    color: olive;
+  }
+
+  h3 {
+    font-family: 'Bona Nova', serif;
+    font-size: 50px;
+    color: mediumpurple;
+  }
+
+  body {
+    font-family: shadower, sans-serif;
+    font-size: 15px;
+  }
+
+  .h45 {
+    font-size: 20px;
+  }
+
+
+  
