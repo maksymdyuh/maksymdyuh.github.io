@@ -1,0 +1,27 @@
+.images {
+    width: 30%;
+    float: left;
+    box-sizing: border-box; /* Включаємо box-sizing, щоб ширина включала обрамлення та поля */
+    padding: 3px; /* Додаємо відступи навколо картинок */
+}
+
+body {
+    background-color: hsl(223, 10%, 20%);
+}
+
+#switch {
+    position: fixed;
+    transform: scale(0.5);
+    top: 0;
+    right: 0;
+    transform-origin: top right; 
+    z-index: 999;
+}
+
+#animationjs {
+    transform: scale(1);
+}
+
+h1 {
+    color: rgb(241, 241, 241);
+}
