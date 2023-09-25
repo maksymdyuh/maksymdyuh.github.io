@@ -1,0 +1,32 @@
+body {
+    color: #e8e5e5;
+    background-color: rgb(37, 36, 36);
+}
+
+h1 {
+    font-family: "h1";
+    text-align: center;
+    font-size: 35px;
+    font-weight:200;
+}
+
+.ui-draggable, .ui-droppable {
+	background-position: top;
+}
+
+p {
+    font-size: 20px;
+}
+
+.owl-carousel .item {
+    height: 200px;
+    width: 300px;
+    background: #751e1e;
+}
+
+.owl-carousel .item img {
+    height: 200px;
+    width: 300px;
+}
+
+
