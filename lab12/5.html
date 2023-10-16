@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Використання оператора IF</title>
+	</head>	
+	<body>
+		<script> 
+			"use strict";
+			
+			let car = {
+				color: "grey",
+				carbody: "sedan",
+				year: 2017,
+				brand: "ford"
+			};
+
+			document.write("<p>Інформація про автомобіль:</p>");
+
+			for (let prop in car) {
+				document.write(prop + ": " + car[prop] + "<br>");
+			}
+		</script>
+	</body>
+</html>

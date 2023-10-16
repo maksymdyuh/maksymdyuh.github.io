@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дюг ПП-25</title>
+</head>
+<body>
+    <div id="output">
+        <textarea id="inputText" rows="4" cols="50" placeholder="Введіть текст..."></textarea>
+        <button id="encryptButton">Зашифрувати</button>
+        <p id="encryptedText">Зашифрований текст: </p>
+    </div>
+
+    <script>
+    function encryptText(text) {
+    var encryptedText = "";
+    for (var i = 0; i < text.length; i++) {
+        var char = text.charAt(i);
+        var isUkrainianLetter = /[а-яА-ЯіІїЇєЄґҐ]/.test(char); // Розширений діапазон для українських літер.
+
+        if (isUkrainianLetter) {
+            if (char === "я" || char === "Я") {
+                encryptedText += char === "я" ? "а" : "А";
+            } else if (char === "і" || char === "І") {
+                encryptedText += char === "і" ? "ї" : "Ї";
+            } else if (char === "ґ" || char === "Ґ") {
+                encryptedText += char === "ґ" ? "д" : "Д";
+            } else if (char === "г" || char === "Г") {
+                encryptedText += char === "г" ? "г" : "Ґ";
+            } else if (char === "е" || char === "Е") {
+                encryptedText += char === "е" ? "Є" : "Є";
+            } else if (char === "є" || char === "Є") {
+                encryptedText += char === "є" ? "ж" : "Ж";
+            } else if (char === "ї" || char === "Ї") {
+                encryptedText += char === "ї" ? "й" : "Й";
+            } else {
+                encryptedText += String.fromCharCode(char.charCodeAt(0) + 1);
+            }
+        } else {
+            encryptedText += char;
+        }
+    }
+    return encryptedText;
+}
+
+        document.getElementById("encryptButton").addEventListener("click", function () {
+            var inputText = document.getElementById("inputText").value;
+            var encryptedText = encryptText(inputText);
+            document.getElementById("encryptedText").textContent = "Зашифрований текст: " + encryptedText;
+        });
+    </script>
+</body>
+</html>

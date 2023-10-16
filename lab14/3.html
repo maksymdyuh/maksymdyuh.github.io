@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Дюг ПП-25</title>
+    </head>
+    <body>
+        <p id="arrayOutput"></p>
+        <p>Кількість чисел менших за X: <span id="countLessThanX"></span></p>
+        <p>Добуток від'ємних чисел на непарних позиціях: <span id="negativeProduct"></span></p>
+    
+        <script>
+            function getRandomNumber() {
+                return Math.floor(Math.random() * 101) - 30; 
+            }
+    
+            var array = [];
+            for (var i = 0; i < 50; i++) {
+                array.push(getRandomNumber());
+            }
+    
+            document.getElementById("arrayOutput").textContent = "Масив: " + array.join(', ');
+    
+            var X = 50;
+    
+            var countLessThanX = array.filter(function (element) {
+                return element < X;
+            }).length;
+    
+            var negativeProduct = 1;
+            for (var i = 1; i < array.length; i += 2) {
+                if (array[i] < 0) {
+                    negativeProduct *= array[i];
+                }
+            }
+    
+            document.getElementById("countLessThanX").textContent = countLessThanX;
+            document.getElementById("negativeProduct").textContent = negativeProduct;
+        </script>
+    </body>
+</html>

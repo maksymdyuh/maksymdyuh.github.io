@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Використання оператора IF</title>
+	</head>	
+	<body>
+		<script>
+			"use strict";
+			
+			document.write("<p style='text-align:center'>Приклад знаходження найменшого числа</p>");
+
+            alert("Вводьте лише різні значення!"); 
+
+            let a = parseFloat(prompt("Значення для a:"));
+            let b = parseFloat(prompt("Значення для b:"));
+            let c = parseFloat(prompt("Значення для c:"));
+			
+			if (a < b && a < c) document.write("Найменше серед трьох чисел - a=", a);
+				else 
+					if (b < c) document.write("Найменше серед трьох чисел - b=", b);
+						else document.write("Найменше серед трьох чисел - c=", c);
+			let min = a > b ? a : b; min = max > c ? min : c;
+			document.write("<p style='text-align:center'>Значення найменшого серед трьох чисел - ", min);
+		</script>
+	</body>
+</html>
+
+

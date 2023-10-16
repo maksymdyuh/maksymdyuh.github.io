@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дюг ПП-25</title>
+</head>
+<body>
+    <div id="output">
+        <p id="countC" class="bold-text">Кількість букв C:</p>
+        <p id="countD" class="bold-text">Кількість букв D:</p>
+        <p>Рядок до заміни '**' на ' ': Це текст для прикладу з символами C та D.**CDD**</p>
+        <p id="replacedString" class="bold-text">Рядок після заміни '**' на ' ':</p>
+    </div>
+
+    <script>
+        function countAndReplace(inputString) {
+            var countC = (inputString.match(/C/g) || []).length;
+            var countD = (inputString.match(/D/g) || []).length;
+            var replacedString = inputString.replace(/\*\*/g, ' ');
+
+            document.getElementById("countC").textContent += " " + countC;
+            document.getElementById("countD").textContent += " " + countD;
+            document.getElementById("replacedString").textContent += " " + replacedString;
+        }
+
+        var inputString = "Це текст для прикладу з символами C та D.**CDD**";
+        countAndReplace(inputString);
+    </script>
+</body>
+</html>

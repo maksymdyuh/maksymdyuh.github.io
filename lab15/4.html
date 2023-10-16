@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дюг ПП-25</title>
+</head>
+<body>
+    <h2>Введіть текст для перемішування:</h2>
+    <form id="textForm">
+        <textarea id="textInput" rows="4" cols="50"></textarea>
+        <br>
+        <button type="button" id="shuffleButton">Перемішати</button>
+    </form>
+
+    <h2>Результат:</h2>
+    <p id="result"></p>
+
+    <script>
+        function shuffleLettersInWords(inputText) {
+            var words = inputText.split(" ");
+            var shuffledWords = [];
+
+            for (var i = 0; i < words.length; i++) {
+                var word = words[i];
+                if (word.length <= 2) {
+                    shuffledWords.push(word);
+                } else {
+                    var firstLetter = word.charAt(0);
+                    var middlePart = word.slice(1, -1).split("");
+                    var lastLetter = word.charAt(word.length - 1);
+
+                    for (var j = middlePart.length - 1; j > 0; j--) {
+                        var k = Math.floor(Math.random() * (j + 1));
+                        var temp = middlePart[j];
+                        middlePart[j] = middlePart[k];
+                        middlePart[k] = temp;
+                    }
+
+                    var shuffledWord = firstLetter + middlePart.join("") + lastLetter;
+                    shuffledWords.push(shuffledWord);
+                }
+            }
+
+            var resultText = shuffledWords.join(" ");
+            return resultText;
+        }
+
+        document.getElementById("shuffleButton").addEventListener("click", function () {
+            var inputText = document.getElementById("textInput").value;
+            var shuffledText = shuffleLettersInWords(inputText);
+            document.getElementById("result").textContent = "Результат: " + shuffledText;
+        });
+    </script>
+</body>
+</html>

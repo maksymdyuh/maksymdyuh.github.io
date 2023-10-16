@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Дюг ПП-25</title>
+    </head>
+    <body>
+        <p>Початковий масив: <span id="initialArray"></span></p>
+        <p>Оновлений масив: <span id="updatedArray"></span></p>
+    
+        <script>
+            function getRandomNumber() {
+                return Math.floor(Math.random() * 100) + 1;
+            }
+    
+            var array = new Array(15);
+    
+            for (var i = 0; i < array.length; i++) {
+                array[i] = getRandomNumber();
+            }
+    
+            var initialArrayElement = document.getElementById("initialArray");
+            var updatedArrayElement = document.getElementById("updatedArray");
+    
+            initialArrayElement.textContent = array.join(',  ');
+    
+            var maxElement = array[0];
+            var maxIndex = 0;
+            for (var i = 1; i < array.length; i++) {
+                if (array[i] > maxElement) {
+                    maxElement = array[i];
+                    maxIndex = i;
+                }
+            }
+    
+            var temp = array[5];
+            array[5] = maxElement;
+            array[maxIndex] = temp;
+    
+            updatedArrayElement.textContent = array.join(',  ');
+        </script>
+    </body>
+</html>

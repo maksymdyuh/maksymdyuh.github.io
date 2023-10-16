@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Дюг ПП-25</title>
+	</head>	
+	<body>
+		<script>
+			function divide(a, b) {
+				if (arguments.length > divide.length) {
+					alert("Аргументів більше, ніж треба");
+				}
+				if (b === 0) {
+					alert("Ділення на нуль неможливе");
+					return NaN;
+				}
+				return a / b;
+			}
+			document.write("Результат ділення - ", divide(12352, 264), "<br>");
+			document.write("Результат ділення - ", divide(7, 0));
+		</script>
+	</body>
+</html>

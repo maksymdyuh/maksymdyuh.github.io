@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Дюг ПП-25</title>
+    <style>
+    .day {
+        font-size: 40px; 
+        color: black; 
+    }
+    
+    .red {
+        color: red; /* Червоний колір тексту */
+    }
+    
+    .green {
+        color: green; /* Зелений колір тексту */
+    }
+    
+    .yellow {
+        color: yellow;
+    }
+    
+    .blue {
+        color: blue;
+    }
+    
+    .brown {
+        color: brown;
+    }
+    
+    .pink {
+        color: pink;
+    }
+</style>
+    
+</head>
+<body>
+<script>
+    "use strict";
+
+    function weekDay(sizes, day, color = 'black') {
+        const dayElement = document.createElement('div');
+        dayElement.textContent = day;
+        dayElement.className = 'day ' + color;
+
+     
+        const sizeIndex = Array.from(document.querySelectorAll('.day')).length % sizes.length;
+        dayElement.style.fontSize = sizes[sizeIndex];
+
+        document.body.appendChild(dayElement);
+    }
+
+    const sizes = ['50px', '45px', '40px', '35px', '30px', '25px', '20px'];
+
+    weekDay(sizes, 'Понеділок', 'red');
+    weekDay(sizes, 'Вівторок', 'green');
+    weekDay(sizes, 'Середа', 'yellow');
+    weekDay(sizes, 'Четвер', 'blue');
+    weekDay(sizes, 'П\'ятниця', 'brown');
+    weekDay(sizes, 'Субота', 'pink');
+    weekDay(sizes, 'Неділя', 'day');
+</script>
+</body>
+</html>
