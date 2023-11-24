@@ -185,3 +185,26 @@ body{
     background: #6563ff;
   }
 }
+
+.back-to-games {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.back-to-games button {
+  cursor: pointer;
+  font-size: 14px;
+  color: #e2e2e4;
+  border-radius: 4px;
+  padding: 4px 11px;
+  background: #3e3c3c;
+  border: 2px solid #3e3c3c;
+  transition: 0.3s ease;
+}
+
+.back-to-games button:hover {
+  color: #3e3c3c;
+  background: #6563ff;
+}
+

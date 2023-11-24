@@ -6,6 +6,7 @@
     <title>Картки на пам'ять | JSGameHub</title>
     <link rel="stylesheet" href="css/card.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
   </head>
   <body>
     <div class="wrapper">
@@ -108,13 +109,22 @@
         </li>
         <div class="details">
           <p class="time">Час: <span><b>20</b>с</span></p>
-          <p class="flips">Спроб: <span><b>0</b></span></p>
+          <p class="flips">Ходів: <span><b>0</b></span></p>
           <button>Заново</button>
         </div>
       </ul>
     </div>
 
-    <script src="js/card.js"></script>
+    <div class="back-to-games">
+      <a href="games.html">
+        <button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 11">
+          <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+        </svg></button>
+      </a>
+    </div>
+    
+
+  <script src="js/card.js"></script>
     
   </body>
 </html>
