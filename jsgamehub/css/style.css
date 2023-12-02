@@ -10,3 +10,63 @@ html, body {
     height: 100%;
 }
 
+
+
+.animated-btn {
+    width: 70px; /* Increased width */
+    height: 70px; /* Increased height */
+    border-radius: 50%;
+    line-height: 70px; /* Set line-height to match the height */
+    display: inline-block; /* Corrected display property */
+    text-align: center;
+    background: rgb(255, 63, 63);
+    position: relative;
+}
+
+.animated-btn i {
+    font-size: 2.5em; /* Adjust the font-size as needed */
+}
+
+.animated-btn::before, .animated-btn::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+    background: rgba(255, 63, 63, 0.8);
+    animation: ripple-1 2s infinite ease-in-out;
+    z-index: -1;
+}
+
+.animated-btn::after {
+    background: rgba(255, 63, 63, 0.6);
+    animation: ripple-2 2s infinite ease-in-out;
+    animation-delay: 0.5s;
+}
+
+@keyframes ripple-1 {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+@keyframes ripple-2 {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.7);
+        opacity: 0;
+    }
+}
