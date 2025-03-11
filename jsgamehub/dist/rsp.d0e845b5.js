@@ -1,0 +1,73 @@
+const gameContainer = document.querySelector(".container"), userResult = document.querySelector(".user_result img"), cpuResult = document.querySelector(".cpu_result img"), result = document.querySelector(".result"), optionImages = document.querySelectorAll(".option_image");
+// Loop through each option image element
+optionImages.forEach((image, index)=>{
+    image.addEventListener("click", (e)=>{
+        image.classList.add("active");
+        userResult.src = cpuResult.src = "img/rock.png";
+        result.textContent = "\u0417\u0430\u0447\u0435\u043A\u0430\u0439\u0442\u0435...";
+        // Loop through each option image again
+        optionImages.forEach((image2, index2)=>{
+            // If the current index doesn't match the clicked index
+            // Remove the "active" class from the other option images
+            index !== index2 && image2.classList.remove("active");
+        });
+        gameContainer.classList.add("start");
+        // Set a timeout to delay the result calculation
+        let time = setTimeout(()=>{
+            gameContainer.classList.remove("start");
+            // Get the source of the clicked option image
+            let imageSrc = e.target.querySelector("img").src;
+            // Set the user image to the clicked option image
+            userResult.src = imageSrc;
+            // Generate a random number between 0 and 2
+            let randomNumber = Math.floor(Math.random() * 3);
+            // Create an array of CPU image options
+            let cpuImages = [
+                "img/rock.png",
+                "img/paper.png",
+                "img/scissors.png"
+            ];
+            // Set the CPU image to a random option from the array
+            cpuResult.src = cpuImages[randomNumber];
+            // Assign a letter value to the CPU option (R for rock, P for paper, S for scissors)
+            let cpuValue = [
+                "R",
+                "P",
+                "S"
+            ][randomNumber];
+            // Assign a letter value to the clicked option (based on index)
+            let userValue = [
+                "R",
+                "P",
+                "S"
+            ][index];
+            // Create an object with all possible outcomes
+            let outcomes = {
+                RR: "\u041D\u0456\u0447\u0438\u044F",
+                RP: "\u0428\u0406",
+                RS: "\u0422\u0438",
+                PP: "\u041D\u0456\u0447\u0438\u044F",
+                PR: "\u0422\u0438",
+                PS: "\u0428\u0406",
+                SS: "\u041D\u0456\u0447\u0438\u044F",
+                SR: "\u0428\u0406",
+                SP: "\u0422\u0438"
+            };
+            // Look up the outcome value based on user and CPU options
+            let outComeValue = outcomes[userValue + cpuValue];
+            // Display the result
+            result.textContent = userValue === cpuValue ? "\u041D\u0456\u0447\u0438\u044F!" : `${outComeValue} \u{43F}\u{435}\u{440}\u{435}\u{43C}\u{456}\u{433}!`;
+        }, 2500);
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+    // Отримайте елемент кнопки back-to-games
+    var backButton = document.querySelector('.back-to-games button');
+    // Додайте слухач подій кліку для кнопки
+    backButton.addEventListener('click', function() {
+        // Закрийте поточне вікно
+        window.close();
+    });
+});
+
+//# sourceMappingURL=rsp.d0e845b5.js.map

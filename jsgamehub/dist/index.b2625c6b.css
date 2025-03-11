@@ -1,0 +1,67 @@
+html, body {
+  height: 100%;
+}
+
+.container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  display: flex;
+}
+
+.animated-btn {
+  text-align: center;
+  background: #ff3f3f;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  display: inline-block;
+  position: relative;
+}
+
+.animated-btn i {
+  font-size: 2.5em;
+}
+
+.animated-btn:before, .animated-btn:after {
+  content: "";
+  z-index: -1;
+  background: #ff3f3fcc;
+  border-radius: 50%;
+  animation: 2s ease-in-out infinite ripple-1;
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.animated-btn:after {
+  background: #ff3f3f99;
+  animation: 2s ease-in-out .5s infinite ripple-2;
+}
+
+@keyframes ripple-1 {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes ripple-2 {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.7);
+  }
+}
+/*# sourceMappingURL=index.b2625c6b.css.map */
