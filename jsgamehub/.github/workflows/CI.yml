@@ -13,10 +13,10 @@ CI + Parcel
 on:\
   push:\
     branches:\
-      - proj-parcel\
+      - main\
   pull_request:\
     branches:\
-      - proj-parcel\
+      - main\
 \
 jobs:\
   test:\
