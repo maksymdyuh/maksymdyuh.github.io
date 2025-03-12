@@ -41,7 +41,7 @@ jobs:
           node-version: 20
 
       - name: встановлення Parcel
-        run: npm install -g parcel-bundler
+        run: npm install -g parcel-bundler@latest
 
       - name: запуск збірки
         run: npm run build
