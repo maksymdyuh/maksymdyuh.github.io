@@ -27,21 +27,4 @@ jobs:
       - name: запуск тестів 
         run: npm test
         
-  build:
-    runs-on: ubuntu-latest
-    needs: test
-
-    steps:
-      - name: завантаження коду репозиторію
-        uses: actions/checkout@v4
-
-      - name: встановлення Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: встановлення Parcel
-        run: npm install -g parcel-bundler@latest
-
-      - name: запуск збірки
-        run: npm run build
+  

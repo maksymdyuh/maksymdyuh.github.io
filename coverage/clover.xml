@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1741770692061" clover="3.2.0">
-  <project timestamp="1741770692061" name="All files">
+<coverage generated="1741773502660" clover="3.2.0">
+  <project timestamp="1741773502660" name="All files">
     <metrics statements="8" coveredstatements="8" conditionals="8" coveredconditionals="8" methods="4" coveredmethods="4" elements="20" coveredelements="20" complexity="0" loc="8" ncloc="8" packages="1" files="1" classes="1"/>
-    <file name="snakeLogic.js" path="/Users/maksymdyuh/Documents/STUD/Управління IT-проєктами/proj/maksymdyuh.github.io/jsgamehub/js/snakeLogic.js">
+    <file name="snakeLogic.js" path="/Users/maksymdyuh/Documents/STUD/Управління IT-проєктами/proj/maksymdyuh.github.io/js/snakeLogic.js">
       <metrics statements="8" coveredstatements="8" conditionals="8" coveredconditionals="8" methods="4" coveredmethods="4"/>
       <line num="2" count="1" type="stmt"/>
       <line num="9" count="1" type="stmt"/>
