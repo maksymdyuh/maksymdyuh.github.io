@@ -1,0 +1,53 @@
+name: CI Parcel
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: завантаження коду репозиторію
+        uses: actions/checkout@v3
+
+      - name: встановлення Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: встановлення залежностей
+        run: npm install
+
+      - name: запуск тестів та збереження логів
+        run: npm test | tee test-results.log
+
+      - name: архів логів тестів
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: test-results.log
+
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - name: завантаження коду репозиторію
+        uses: actions/checkout@v3
+
+      - name: встановлення Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: встановлення Parcel
+        run: npm install -g parcel-bundler
+
+      - name: запуск збірки
+        run: npm run build
