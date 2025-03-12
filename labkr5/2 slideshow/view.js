@@ -1,4 +1,3 @@
-// Представлення (View) - відповідає за відображення даних користувачу
 class SlideshowView {
     constructor(model, container, controller) {
         this.model = model;

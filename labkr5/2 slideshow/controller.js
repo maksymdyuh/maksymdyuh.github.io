@@ -1,4 +1,3 @@
-// Контролер (Controller) - обробляє введення користувача і оновлює Model
 class SlideshowController {
     constructor(model) {
         this.model = model;

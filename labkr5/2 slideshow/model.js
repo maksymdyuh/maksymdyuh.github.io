@@ -1,4 +1,3 @@
-// Модель (Model) - відповідає за дані та бізнес-логіку
 class SlideshowModel {
     constructor() {
         // Масив з шляхами до зображень
@@ -13,22 +12,18 @@ class SlideshowModel {
         this.observers = [];
     }
 
-    // Отримати поточний індекс слайду
     getCurrentIndex() {
         return this.currentIndex;
     }
 
-    // Отримати всі зображення
     getAllImages() {
         return this.images;
     }
 
-    // Отримати поточне зображення
     getCurrentImage() {
         return this.images[this.currentIndex];
     }
 
-    // Перейти до наступного слайду
     nextSlide() {
         this.currentIndex = (this.currentIndex + 1) % this.images.length;
         this.notifyObservers();
